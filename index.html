@@ -1,29 +1,75 @@
 <head>
-    <meta charset="UTF-8">
-    <title>Review Site</title>
-    <!-- <documentation at http://demos.jquerymobile.com/1.4.1/ > -->
-  
-    <link href='https://fonts.googleapis.com/css?family=Nova Flat' rel='stylesheet'>
-    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <script src="Javascript/index.js"></script>
-    <link rel="stylesheet" type="text/css" href="index.css">
-  
+  <meta charset="UTF-8">
+  <title>Review Site</title>
+  <!-- <documentation at http://demos.jquerymobile.com/1.4.1/ > -->
+
+  <link href='https://fonts.googleapis.com/css?family=Nova Flat' rel='stylesheet'>
+
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <script src="index.js"></script>
+  <link rel="stylesheet" type="text/css" href="index.css">
+
 </head>
-  
+
 <body>
-  
-    <!-- Start of  page ------------------------------------------------------------------>
-    <div data-role="page" id="home">
-  
+<style>
+
+.ui-page {
+  background: #c3bfd3 !important;
+}
+
+.ui-header {
+  background: #c3bfd3;
+}
+</style>
+
+
+  <!-- Start of  page ------------------------------------------------------------------>
+  <div data-role="page" id="home">
+
+    <!--   page header -->
+    <div data-role="header" data-theme='a'>
+      <h1>Movie and TV Reviews</h1>
+      <div data-role="navbar" data-theme='b' id="nav_bar">
+        <ul>
+        <li><a href="#home" class='active-page'>Home Page</a></li>
+        <li><a href="#LeaveMovieRev">Leave Movie Review</a></li>
+        <li><a href="#ViewMovieRev">View Movie Reviews</a></li>
+        <li><a href="#LeaveShowRev">Leave Show Review</a></li>
+        <li><a href="#ViewShowRev">View Show Reviews</a></li>
+        </ul>
+      </div><!-- /navbar -->
+      <div class="myHeader">Leave and view reviews for your favorite movies and shows.</div>
+
+    </div>
+
+    <!--   page content -->
+    <div data-role="content" data-theme='b'>
+      <div class="newFont">
+        <h2>This page will show the detail for one particular movie that was clicked 
+          on in the SHOW Page!</h2>
+      </div>
+    </div>
+
+    <!--  page footer -->
+    <div data-role="footer" data-theme='b'>
+      <h1>For educational purposes only</h1>
+    </div>
+  </div>
+  <!-- End of  page ------------------------------------------------------------------>
+
+  <!-- Start of  page ------------------------------------------------------------------>
+  <div data-role="page" id="LeaveMovieRev">
+
       <!--   page header -->
       <div data-role="header" data-theme='a'>
         <h1>Movie and TV Reviews</h1>
         <div data-role="navbar" data-theme='b' id="nav_bar">
           <ul>
-          <li><a href="#home" class='active-page'>Home Page</a></li>
-          <li><a href="#LeaveMovieRev">Leave Movie Review</a></li>
+          <li><a href="#home">Home Page</a></li>
+          <li><a href="#LeaveMovieRev" class='active-page'>Leave Movie Review</a></li>
           <li><a href="#ViewMovieRev">View Movie Reviews</a></li>
           <li><a href="#LeaveShowRev">Leave Show Review</a></li>
           <li><a href="#ViewShowRev">View Show Reviews</a></li>
@@ -36,7 +82,18 @@
       <!--   page content -->
       <div data-role="content" data-theme='b'>
         <div class="newFont">
-          <h2> Insert future page content here</h2>
+          <h2> Leave Movie Review</h2>
+          <form>
+              <label for="movieUser">Your Name:</label>
+              <input type="text" id="movieUser" name="movieUser"><br><br>
+              <label for="movieTitle">Title of Movie:</label>
+              <input type="text" id="movieTitle" name="movieTitle"><br><br>
+              <label for="movieScore">Rate Movie out of 5:</label>
+              <input type="number" id="movieScore" name="movieScore"><br><br>
+              <label for="movieText">Leave Review:</label>
+              <input type="text" id="movieText" name="movieText"><br><br>
+              <input type="submit" value="Submit">
+          </form>
         </div>
       </div>
   
@@ -46,60 +103,122 @@
       </div>
     </div>
     <!-- End of  page ------------------------------------------------------------------>
-
+    
     <!-- Start of  page ------------------------------------------------------------------>
-    <div data-role="page" id="LeaveMovieRev">
-  
-        <!--   page header -->
-        <div data-role="header" data-theme='a'>
-          <h1>Movie and TV Reviews</h1>
-          <div data-role="navbar" data-theme='b' id="nav_bar">
-            <ul>
-            <li><a href="#home">Home Page</a></li>
-            <li><a href="#LeaveMovieRev" class='active-page'>Leave Movie Review</a></li>
-            <li><a href="#ViewMovieRev">View Movie Reviews</a></li>
-            <li><a href="#LeaveShowRev">Leave Show Review</a></li>
-            <li><a href="#ViewShowRev">View Show Reviews</a></li>
-            </ul>
-          </div><!-- /navbar -->
-          <div class="myHeader">Leave and view reviews for your favorite movies and shows.</div>
-  
-        </div>
-    
-        <!--   page content -->
-        <div data-role="content" data-theme='b'>
-          <div class="newFont">
-            <h2> Leave Movie Review</h2>
-            <form>
-                <label for="movieUser">Your Name:</label>
-                <input type="text" id="movieUser" name="movieUser"><br><br>
-                <label for="movieTitle">Title of Movie:</label>
-                <input type="text" id="movieTitle" name="movieTitle"><br><br>
-                <label for="movieScore">Rate Movie out of 5:</label>
-                <input type="number" id="movieScore" name="movieScore"><br><br>
-                <label for="movieText">Leave Review:</label>
-                <input type="text" id="movieText" name="movieText"><br><br>
-                <input type="submit" value="Submit">
-            </form>
-          </div>
-        </div>
-    
-        <!--  page footer -->
-        <div data-role="footer" data-theme='b'>
-          <h1>For educational porpoises only</h1>
-        </div>
+  <div data-role="page" id="ViewMovieRev">
+
+    <!--   page header -->
+    <div data-role="header" data-theme='a'>
+      <h1>Movie and TV Reviews</h1>
+      <div data-role="navbar" data-theme='b' id="nav_bar">
+        <ul>
+        <li><a href="#home" >Home Page</a></li>
+        <li><a href="#LeaveMovieRev">Leave Movie Review</a></li>
+        <li><a href="#ViewMovieRev" class='active-page'>View Movie Reviews</a></li>
+        <li><a href="#LeaveShowRev">Leave Show Review</a></li>
+        <li><a href="#ViewShowRev">View Show Reviews</a></li>
+        </ul>
+      </div><!-- /navbar -->
+      <div class="myHeader">Leave and view reviews for your favorite movies and shows.</div>
+
+    </div>
+
+    <!--   page content -->
+    <div data-role="content" data-theme='b'>
+      <div class="newFont">
+        <button type="button">Filter Reviews Alphabetically</button>
+        <button type="button">Filter Reviews By score Ascending</button>
+        <button type="button">Filter Reviews By score desc</button>
+        <p>Insert retrieved reviews here<p>
       </div>
-      <!-- End of  page ------------------------------------------------------------------>
-      
-      <!-- Start of  page ------------------------------------------------------------------>
-    <div data-role="page" id="ViewMovieRev">
+    </div>
+
+    <!--  page footer -->
+    <div data-role="footer" data-theme='b'>
+      <h1>For educational purposes onlyy</h1>
+    </div>
+  </div>
+  <!-- End of  page ------------------------------------------------------------------>
+
+   <!-- Start of  page ------------------------------------------------------------------>
+   <div data-role="page" id="LeaveShowRev">
+
+    <!--   page header -->
+    <div data-role="header" data-theme='a'>
+      <h1>Movie and TV Reviews</h1>
+      <div data-role="navbar" data-theme='b' id="nav_bar">
+        <ul>
+        <li><a href="#home">Home Page</a></li>
+        <li><a href="#LeaveMovieRev" >Leave Movie Review</a></li>
+        <li><a href="#ViewMovieRev">View Movie Reviews</a></li>
+        <li><a href="#LeaveShowRev" class='active-page'>Leave Show Review</a></li>
+        <li><a href="#ViewShowRev">View Show Reviews</a></li>
+        </ul>
+      </div><!-- /navbar -->
+      <div class="myHeader">Leave and view reviews for your favorite movies and shows.</div>
+
+    </div>
+
+    <!--   page content -->
+    <div data-role="content" data-theme='b'>
+      <div class="newFont">
+        <h2> Leave Movie Review</h2>
+        <form>
+            <label for="showUser">Your Name:</label>
+            <input type="text" id="showUserUser" name="showUserUser"><br><br>
+            <label for="showTitle">Title of Show:</label>
+            <input type="text" id="showTitle" name="showTitle"><br><br>
+            <label for="showScore">Rate Show out of 5:</label>
+            <input type="number" id="showScore" name="showScore"><br><br>
+            <label for="showText">Leave Review:</label>
+            <input type="text" id="showText" name="showText"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+
+    <!--  page footer -->
+    <div data-role="footer" data-theme='b'>
+      <h1>For educational purposes only</h1>
+    </div>
+  </div>
+  <!-- End of  page ------------------------------------------------------------------>
   
-      <!--   page header -->
-      <div data-role="header" data-theme='a'>
-        <h1>Movie and TV Reviews</h1>
-        <div data-role="navbar" data-theme='b' id="nav_bar">
-          <ul>
-          <li><a href="#home" >Home Page</a></li>
-          <li><a href="#LeaveMovieRev">Leave Movie Review</a></li>
-          <li><a href="#ViewMovieRev" class='active-page'>View Movie Reviews</
-...
+  <!-- Start of  page ------------------------------------------------------------------>
+<div data-role="page" id="ViewShowRev">
+
+  <!--   page header -->
+  <div data-role="header" data-theme='a'>
+    <h1>Movie and TV Reviews</h1>
+    <div data-role="navbar" data-theme='b' id="nav_bar">
+      <ul>
+      <li><a href="#home" >Home Page</a></li>
+      <li><a href="#LeaveMovieRev">Leave Movie Review</a></li>
+      <li><a href="#ViewMovieRev" >View Movie Reviews</a></li>
+      <li><a href="#LeaveShowRev">Leave Show Review</a></li>
+      <li><a href="#ViewShowRev" class='active-page'>View Show Reviews</a></li>
+      </ul>
+    </div><!-- /navbar -->
+    <div class="myHeader">Leave and view reviews for your favorite movies and shows.</div>
+
+  </div>
+
+  <!--   page content -->
+  <div data-role="content" data-theme='b'>
+    <div class="newFont">
+      <button type="button">Filter Reviews Alphabetically</button>
+      <button type="button">Filter Reviews By score Ascending</button>
+      <button type="button">Filter Reviews By score desc</button>
+      <p>Insert retrieved reviews here<p>
+    </div>
+  </div>
+
+  <!--  page footer -->
+  <div data-role="footer" data-theme='b'>
+    <h1>For educational purposes only</h1>
+  </div>
+</div>
+<!-- End of  page ------------------------------------------------------------------>
+
+
+</body>  
